@@ -69,4 +69,10 @@ This is a patch//device built in Max/MSP that allows the user to apply real-time
 
 **Freeze:** Stops recording and keeps the grains playing from the last moments of audio before freezing -- the window set by the longest Delay time at the moment you freeze (at least 100 ms). Grains keep their size, speed, direction, pan and amp settings, but every grain stays inside that window, so no older material or silent gaps come back. Freezing and releasing are crossfaded, and so is the point where the window loops. The default is off.
 
+## <a name="Credits"></a>Credits
 
+An emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.
+
+## <a name="Credits"></a>Credits
+
+An emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.
