@@ -94,7 +94,6 @@ Copy and paste br.munge.1.1.amxd into that folder
 
  
 
+## <a name="Credits"></a>Credits
 
-
-
-
+An emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.

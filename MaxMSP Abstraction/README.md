@@ -116,3 +116,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 16 | Spread | Float | 0 - 100 | 100 |
 | 17 | Feedback | Float | 0 - 0.99, capped internally at 0.95 | 0 |
 | 18 | Freeze | Int | 0 = Live, 1 = Frozen | 0 |
+
+## <a name="Credits"></a>Credits
+
+An emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.
