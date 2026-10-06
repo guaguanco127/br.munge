@@ -1,5 +1,6 @@
 {
     "patcher": {
+"description" : "br.munge.abs.poly.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: an emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.",
         "fileversion": 1,
         "appversion": {
             "major": 9,
@@ -16,6 +17,8 @@
             883.0
         ],
         "boxes": [
+{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [27.0, 294.0, 520.0, 80.0], "text": "br.munge.abs.poly.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: an emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.", "linecount": 4}},
+
             {
                 "box": {
                     "id": "obj-13",
