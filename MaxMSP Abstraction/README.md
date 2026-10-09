@@ -1,5 +1,5 @@
 # Max/MSP Abstraction:   
-## br.munge.1.1
+## br.munge.1.2
 
 
 
@@ -8,20 +8,32 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [What is an abstraction?](#Abstraction)  
 [How To Install](#Install)  
-[How To Use](#Use) 
+[How To Use](#Use)  
+[State outlet](#State)  
+[Example Patch](#Example) 
  
  
+
+## What's New in 1.2
+
+- **On/Off:** a new switch. Off stops new input and lets the grains play out what is already recorded. The default is On, so 1.2 sounds exactly like 1.1 until you use it.
+- **Mix Mode (Thru / Aux):** what the dry signal does while the munge is Off. "Thru" (the default) passes it; "Aux" silences it, for use on a send/return.
+- **Readable parameter names:** the controls now show up as Voices, Dry/Wet, Delay 1, Size 1, Direction, Amp Mode, Pan Mode, Freeze and so on in Live's automation list, pattr and presets (they were live.dial[9], live.tab[2] ...). The panel looks exactly the same.
+- **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes (`voices`, `drywet`, `delay1` ... `on`, `mode`). See [State outlet](https://github.com/guaguanco127/br.munge/tree/main/MaxMSP%20Abstraction#State).
+- **Two new inlets** for On/Off (inlet 19) and Mix Mode (inlet 20), after the existing ones. Nothing else moved, so 1.2 swaps in for 1.1 without rewiring: retype the object as `br.munge.abs.1.2`.
+- **New example patch:** _br.munge.example.1.2 with a demo source, messages into every inlet and a State outlet tab.
 
 ## What's New in 1.1
 
@@ -41,6 +53,10 @@ This is a patch//device built in Max/MSP that allows the user to apply real-time
 **Voices:** The total number of active granular voices at a time. The default is 0, and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
  
 **Dry/Wet:** The amount of dry and wet signal between 0. and 100. The default is 50. 
+
+**On/Off:** Turns the munge on or off. The default is On. Off stops recording new input, so the grains play out what is already recorded (and any Feedback tail) and then fall silent; nothing is cut off. What you hear of the dry signal while Off depends on Mix Mode. Switching glides over 20 ms, so it never clicks.
+
+**Mix Mode (Thru / Aux):** What happens to your dry signal while the munge is Off. "Thru" (the default) lets the dry signal pass at full level: use it when the munge sits on a track. "Aux" silences it, so only the grains are heard: use it on a send/return. While On, the dry signal follows Dry/Wet in both modes.
 
 **Delay 1:** The first delay time in ms between 0 and 1000, which defines how far back a grain could look into a delay line. "Delay 1" is compared with "Delay 2" and a random delay is chosen between these two parameters. The range is between 0 ms and 1000 ms with the default set to 0.
   
@@ -82,17 +98,17 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.munge.abs.1.1.maxpat inside of the same folder as the Max patch you are using. 
+2. Copy and paste br.munge.abs.1.2.maxpat inside of the same folder as the Max patch you are using. To try it first, copy _br.munge.example.1.2.maxpat too. 
 
 3. Also, copy and paste the file called br.munge.abs.poly.1.1.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
 
-4. In the Max patch you are using, create an object called br.munge.abs.1.1 (for example: [br.munge.abs.1.1], do not include brackets). **No buffer name argument is needed** -- every instance creates its own internal buffer, so you can use as many as you like side by side. (In version 1.0 an argument was required to name the buffer; if you still type one, it is simply ignored.)
+4. In the Max patch you are using, create an object called br.munge.abs.1.2 (for example: [br.munge.abs.1.2], do not include brackets). **No buffer name argument is needed** -- every instance creates its own internal buffer, so you can use as many as you like side by side. (In version 1.0 an argument was required to name the buffer; if you still type one, it is simply ignored.)
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.munge.abs.1.1.maxpat located within the same folder as your project. No argument is needed.
+5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.munge.abs.1.2.maxpat located within the same folder as your project. No argument is needed.
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. The two outlets are the left and right outputs.
+The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; the third (last) outlet is the [State outlet](#State).
 
 Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
 
@@ -116,6 +132,43 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 16 | Spread | Float | 0 - 100 | 100 |
 | 17 | Feedback | Float | 0 - 0.99, capped internally at 0.95 | 0 |
 | 18 | Freeze | Int | 0 = Live, 1 = Frozen | 0 |
+| 19 | On/Off | Int | 0 = Off (no new input; the grains play out), 1 = On | 1 |
+| 20 | Mix Mode | Int | 0 = Thru (Off passes the dry signal), 1 = Aux (Off silences the dry signal) | 0 |
+
+## <a name="State"></a>State outlet
+
+The last outlet sends the current settings as named messages the moment they change, for example `voices 6`, `drywet 70.`, `mode 1`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync, and pick the messages out by name with [route voices drywet ...].
+
+| Name | Control | Values |
+|---|---|---|
+| voices | Voices | 0 - 10 |
+| drywet | Dry/Wet | 0 - 100 % |
+| delay1 | Delay 1 | 0 - 1000 ms |
+| delay2 | Delay 2 | 0 - 1000 ms |
+| size1 | Size 1 | 5 - 1000 ms |
+| size2 | Size 2 | 5 - 1000 ms |
+| speed1 | Speed 1 | 0.25 - 128 |
+| speed2 | Speed 2 | 0.25 - 128 |
+| sep1 | Separation 1 | 0 - 1000 ms |
+| sep2 | Separation 2 | 0 - 1000 ms |
+| direction | Grain Play Direction | 0 = Forward, 1 = Reverse, 2 = Random |
+| ampmode | Amp Mode | 0 - 6 (see the inlet table) |
+| panmode | Pan Mode | 0 - 7 (see the inlet table) |
+| spread | Spread | 0 - 100 |
+| feedback | Feedback | 0 - 0.99 |
+| freeze | Freeze | 0 = Live, 1 = Frozen |
+| on | On/Off | 0 = Off, 1 = On |
+| mode | Mix Mode | 0 = Thru, 1 = Aux |
+
+## <a name="Example"></a>Example Patch
+
+Open _br.munge.example.1.2.maxpat (keep it in the same folder as the abstraction and br.munge.abs.poly.1.1.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+
+- **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
+- **Voices:** br.munge starts with 0 voices (silent): click a Voices message (3, 6 or 10) to hear grains.
+- **Messages:** every control has a row of messages (or a toggle) wired to its inlet; the panel follows.
+- **On/Off and Mix Mode:** send 0 to On/Off with Feedback up and hear the grains play out; then compare Thru (the dry keeps playing) with Aux (only the grains).
+- **State outlet tab:** the numbers follow every setting as you change it on the panel or with the messages.
 
 ## <a name="Credits"></a>Credits
 

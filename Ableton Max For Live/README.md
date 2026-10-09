@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.munge.1.1
+# Ableton Max for Live device: br.munge.1.2
 
 
 
@@ -7,17 +7,25 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.2
+
+- **On/Off:** a new switch. Off stops new input and lets the grains play out what is already recorded. The default is On, so 1.2 sounds exactly like 1.1 until you use it.
+- **Mix Mode (Thru / Aux):** what the dry signal does while the munge is Off. "Thru" (the default) passes it; "Aux" silences it, for use on a send/return.
+- **Readable parameter names:** the controls now show up as Voices, Dry/Wet, Delay 1, Size 1, Direction, Amp Mode, Pan Mode, Freeze and so on in Live's automation list, pattr and presets (they were live.dial[9], live.tab[2] ...). The panel looks exactly the same.
+- **Live sets:** the device is a new file, so existing sets keep the 1.1 device until you swap the new one in. Because the parameter names changed, automation from a 1.1 set does not carry over to 1.2.
 
 ## What's New in 1.1
 
@@ -37,6 +45,10 @@ This is a patch//device built in Max/MSP that allows the user to apply real-time
 **Voices:** The total number of active granular voices at a time. The default is 0, and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
  
 **Dry/Wet:** The amount of dry and wet signal between 0. and 100. The default is 50. 
+
+**On/Off:** Turns the munge on or off. The default is On. Off stops recording new input, so the grains play out what is already recorded (and any Feedback tail) and then fall silent; nothing is cut off. What you hear of the dry signal while Off depends on Mix Mode. Switching glides over 20 ms, so it never clicks.
+
+**Mix Mode (Thru / Aux):** What happens to your dry signal while the munge is Off. "Thru" (the default) lets the dry signal pass at full level: use it when the munge sits on a track. "Aux" silences it, so only the grains are heard: use it on a send/return. While On, the dry signal follows Dry/Wet in both modes.
 
 **Delay 1:** The first delay time in ms between 0 and 1000, which defines how far back a grain could look into a delay line. "Delay 1" is compared with "Delay 2" and a random delay is chosen between these two parameters. The range is between 0 ms and 1000 ms with the default set to 0.
   
@@ -79,7 +91,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects  
-Copy and paste br.munge.1.1.amxd into that folder
+Copy and paste br.munge.1.2.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
@@ -87,7 +99,7 @@ Copy and paste br.munge.1.1.amxd into that folder
   
 5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
-6. Either double-click on the device, or drag/drop it onto the track where you wish to use it. You can use several br.munge devices in the same Live set -- each one has its own internal buffer. The Freeze button (Live / Frozen) can be automated like any other parameter.  
+6. Either double-click on the device, or drag/drop it onto the track where you wish to use it. You can use several br.munge devices in the same Live set -- each one has its own internal buffer. Every control, including Freeze, On/Off and Mix Mode, can be automated like any other parameter.  
     
 
 
