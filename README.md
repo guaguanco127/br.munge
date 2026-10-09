@@ -1,6 +1,6 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.munge.1.1
+## br.munge.1.2
 
 
 
@@ -9,18 +9,29 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Links
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [Ableton Max for Live Device](https://github.com/guaguanco127/br.munge/tree/main/Ableton%20Max%20For%20Live) To use inside of Ableton Suite   
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.munge/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP   
 
+
+## What's New in 1.2
+
+- **On/Off:** a new switch. Off stops new input and lets the grains play out what is already recorded. The default is On, so 1.2 sounds exactly like 1.1 until you use it.
+- **Mix Mode (Thru / Aux):** what the dry signal does while the munge is Off. "Thru" (the default) passes it; "Aux" silences it, for use on a send/return.
+- **Readable parameter names:** the controls now show up as Voices, Dry/Wet, Delay 1, Size 1, Direction, Amp Mode, Pan Mode, Freeze and so on in Live's automation list, pattr and presets (they were live.dial[9], live.tab[2] ...). The panel looks exactly the same.
+- **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes (`voices`, `drywet`, `delay1` ... `on`, `mode`). See [State outlet](https://github.com/guaguanco127/br.munge/tree/main/MaxMSP%20Abstraction#State).
+- **Two new inlets** for On/Off (inlet 19) and Mix Mode (inlet 20), after the existing ones. Nothing else moved, so 1.2 swaps in for 1.1 without rewiring: retype the object as `br.munge.abs.1.2`.
+- **New example patch:** _br.munge.example.1.2 with a demo source, messages into every inlet and a State outlet tab.
+- **Live sets:** the device is a new file, so existing sets keep the 1.1 device until you swap the new one in. Because the parameter names changed, automation from a 1.1 set does not carry over to 1.2.
 
 ## What's New in 1.1
 
@@ -40,6 +51,10 @@ This is a patch//device built in Max/MSP that allows the user to apply real-time
 **Voices:** The total number of active granular voices at a time. The default is 0, and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
  
 **Dry/Wet:** The amount of dry and wet signal between 0. and 100. The default is 50. 
+
+**On/Off:** Turns the munge on or off. The default is On. Off stops recording new input, so the grains play out what is already recorded (and any Feedback tail) and then fall silent; nothing is cut off. What you hear of the dry signal while Off depends on Mix Mode. Switching glides over 20 ms, so it never clicks.
+
+**Mix Mode (Thru / Aux):** What happens to your dry signal while the munge is Off. "Thru" (the default) lets the dry signal pass at full level: use it when the munge sits on a track. "Aux" silences it, so only the grains are heard: use it on a send/return. While On, the dry signal follows Dry/Wet in both modes.
 
 **Delay 1:** The first delay time in ms between 0 and 1000, which defines how far back a grain could look into a delay line. "Delay 1" is compared with "Delay 2" and a random delay is chosen between these two parameters. The range is between 0 ms and 1000 ms with the default set to 0.
   
@@ -68,10 +83,6 @@ This is a patch//device built in Max/MSP that allows the user to apply real-time
 **Feedback:** Feeds the wet signal back into the munge effect, ping-ponging between left and right. The range is between 0. and 0.99, with the default set to 0. It is scaled by the number of active voices, so it behaves the same at any voice count.
 
 **Freeze:** Stops recording and keeps the grains playing from the last moments of audio before freezing -- the window set by the longest Delay time at the moment you freeze (at least 100 ms). Grains keep their size, speed, direction, pan and amp settings, but every grain stays inside that window, so no older material or silent gaps come back. Freezing and releasing are crossfaded, and so is the point where the window loops. The default is off.
-
-## <a name="Credits"></a>Credits
-
-An emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.
 
 ## <a name="Credits"></a>Credits
 
