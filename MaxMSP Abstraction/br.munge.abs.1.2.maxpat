@@ -20,6 +20,102 @@
 		"boxes": [
 			{
 				"box": {
+					"fontname": "Arial",
+					"fontsize": 12.0,
+					"id": "on-text",
+					"maxclass": "live.text",
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						""
+					],
+					"parameter_enable": 1,
+					"patching_rect": [
+						-53.0,
+						389.0,
+						48.0,
+						20.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						300.5,
+						6.0,
+						49.0,
+						20.0
+					],
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_enum": [
+								"Off",
+								"On"
+							],
+							"parameter_longname": "On/Off",
+							"parameter_mmax": 1,
+							"parameter_modmode": 0,
+							"parameter_shortname": "On/Off",
+							"parameter_type": 2,
+							"parameter_initial": [
+								1
+							],
+							"parameter_initial_enable": 1
+						}
+					},
+					"text": "Off",
+					"texton": "On",
+					"varname": "On/Off"
+				}
+			},
+			{
+				"box": {
+					"fontname": "Arial",
+					"fontsize": 12.0,
+					"id": "mm-text",
+					"maxclass": "live.text",
+					"numinlets": 1,
+					"numoutlets": 2,
+					"outlettype": [
+						"",
+						""
+					],
+					"parameter_enable": 1,
+					"patching_rect": [
+						107.0,
+						389.0,
+						48.0,
+						20.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						300.5,
+						141.0,
+						49.0,
+						20.0
+					],
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_enum": [
+								"Thru",
+								"Aux"
+							],
+							"parameter_longname": "Mix Mode",
+							"parameter_mmax": 1,
+							"parameter_modmode": 0,
+							"parameter_shortname": "Mix Mode",
+							"parameter_type": 2,
+							"parameter_initial": [
+								0
+							],
+							"parameter_initial_enable": 1
+						}
+					},
+					"text": "Thru",
+					"texton": "Aux",
+					"varname": "Mix Mode"
+				}
+			},
+			{
+				"box": {
 					"id": "obj-signature",
 					"maxclass": "comment",
 					"numinlets": 1,
@@ -4667,102 +4763,6 @@
 						22.0
 					],
 					"text": "deferlow"
-				}
-			},
-			{
-				"box": {
-					"fontname": "Arial",
-					"fontsize": 12.0,
-					"id": "on-text",
-					"maxclass": "live.text",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"",
-						""
-					],
-					"parameter_enable": 1,
-					"patching_rect": [
-						-53.0,
-						389.0,
-						48.0,
-						20.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						300.5,
-						6.0,
-						49.0,
-						20.0
-					],
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_enum": [
-								"Off",
-								"On"
-							],
-							"parameter_longname": "On/Off",
-							"parameter_mmax": 1,
-							"parameter_modmode": 0,
-							"parameter_shortname": "On/Off",
-							"parameter_type": 2,
-							"parameter_initial": [
-								1
-							],
-							"parameter_initial_enable": 1
-						}
-					},
-					"text": "Off",
-					"texton": "On",
-					"varname": "On/Off"
-				}
-			},
-			{
-				"box": {
-					"fontname": "Arial",
-					"fontsize": 12.0,
-					"id": "mm-text",
-					"maxclass": "live.text",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"",
-						""
-					],
-					"parameter_enable": 1,
-					"patching_rect": [
-						107.0,
-						389.0,
-						48.0,
-						20.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						300.5,
-						141.0,
-						49.0,
-						20.0
-					],
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_enum": [
-								"Thru",
-								"Aux"
-							],
-							"parameter_longname": "Mix Mode",
-							"parameter_mmax": 1,
-							"parameter_modmode": 0,
-							"parameter_shortname": "Mix Mode",
-							"parameter_type": 2,
-							"parameter_initial": [
-								0
-							],
-							"parameter_initial_enable": 1
-						}
-					},
-					"text": "Thru",
-					"texton": "Aux",
-					"varname": "Mix Mode"
 				}
 			},
 			{
