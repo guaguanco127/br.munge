@@ -15,7 +15,7 @@
 			1350.0,
 			920.0
 		],
-		"description": "_br.munge.example.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+		"description": "_br.munge.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
 		"showontab": 1,
 		"boxes": [
 			{
@@ -591,7 +591,7 @@
 						468.0,
 						33.0
 					],
-					"text": "_br.munge.example.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/"
+					"text": "_br.munge.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/"
 				}
 			},
 			{
@@ -623,7 +623,7 @@
 					"lockeddragscroll": 0,
 					"lockedsize": 0,
 					"maxclass": "bpatcher",
-					"name": "br.munge.abs.1.2.maxpat",
+					"name": "br.munge.abs.1.3.maxpat",
 					"numinlets": 20,
 					"numoutlets": 3,
 					"offset": [
@@ -659,7 +659,7 @@
 						520.0,
 						20.0
 					],
-					"text": "br.munge.abs.1.2 (bpatcher). Voices starts at 0 (silent): raise it, or click a Voices message."
+					"text": "br.munge.abs.1.3 (bpatcher). Voices starts at 0 (silent): raise it, or click a Voices message."
 				}
 			},
 			{
@@ -676,7 +676,7 @@
 						300.0,
 						74.0
 					],
-					"text": "Keep these files together, next to your patch: br.munge.abs.1.2.maxpat and br.munge.abs.poly.1.1.maxpat (the grain voice, loaded by poly~). Mix Mode: Thru = dry passes while Off; Aux = silent while Off.",
+					"text": "Keep these files together, next to your patch: br.munge.abs.1.3.maxpat and br.munge.abs.poly.1.3.maxpat (the grain voice, loaded by poly~). Mix Mode: Thru = dry passes while Off; Aux = silent while Off.",
 					"linecount": 5
 				}
 			},

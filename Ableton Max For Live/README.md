@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.munge.1.2
+# Ableton Max for Live device: br.munge.1.3
 
 
 
@@ -7,18 +7,24 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.3
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.3, including the helper files. Nothing changed in the sound.
 
 ## What's New in 1.2
 
@@ -90,21 +96,16 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 
 2. For Macintosh:  
 Go to your user folder  
-Then Music > Ableton > User Library > Presets > Audio Effects  
-Copy and paste br.munge.1.2.amxd into that folder
+Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
+Copy and paste br.munge.1.3.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
-4. Also, copy and paste the file called br.munge.poly.1.1.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The device will not work without this file.**    
-  
-5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
+4. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
-6. Either double-click on the device, or drag/drop it onto the track where you wish to use it. You can use several br.munge devices in the same Live set -- each one has its own internal buffer. Every control, including Freeze, On/Off and Mix Mode, can be automated like any other parameter.  
-    
+5. Either double-click on the device, or drag/drop it onto the track where you wish to use it. You can use several br.munge devices in the same Live set -- each one has its own internal buffer. Every control, including Freeze, On/Off and Mix Mode, can be automated like any other parameter.
 
-
-
- 
+**The device is frozen:** its helper files are inside the .amxd, so no other files are needed.
 
 ## <a name="Credits"></a>Credits
 

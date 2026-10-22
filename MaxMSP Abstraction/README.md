@@ -1,5 +1,5 @@
 # Max/MSP Abstraction:   
-## br.munge.1.2
+## br.munge.1.3
 
 
 
@@ -8,13 +8,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
@@ -25,6 +26,11 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 [Example Patch](#Example) 
  
  
+
+## What's New in 1.3
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.3, including the helper files. Nothing changed in the sound.
 
 ## What's New in 1.2
 
@@ -98,13 +104,13 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.munge.abs.1.2.maxpat inside of the same folder as the Max patch you are using. To try it first, copy _br.munge.example.1.2.maxpat too. 
+2. Copy and paste br.munge.abs.1.3.maxpat inside of the same folder as the Max patch you are using. To try it first, copy _br.munge.example.1.3.maxpat too. 
 
-3. Also, copy and paste the file called br.munge.abs.poly.1.1.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
+3. Also, copy and paste the file called br.munge.abs.poly.1.3.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
 
-4. In the Max patch you are using, create an object called br.munge.abs.1.2 (for example: [br.munge.abs.1.2], do not include brackets). **No buffer name argument is needed** -- every instance creates its own internal buffer, so you can use as many as you like side by side. (In version 1.0 an argument was required to name the buffer; if you still type one, it is simply ignored.)
+4. In the Max patch you are using, create an object called br.munge.abs.1.3 (for example: [br.munge.abs.1.3], do not include brackets). **No buffer name argument is needed** -- every instance creates its own internal buffer, so you can use as many as you like side by side. (In version 1.0 an argument was required to name the buffer; if you still type one, it is simply ignored.)
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.munge.abs.1.2.maxpat located within the same folder as your project. No argument is needed.
+5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.munge.abs.1.3.maxpat located within the same folder as your project. No argument is needed.
 
 ## <a name="Use"></a>How To Use
 
@@ -162,7 +168,7 @@ The last outlet sends the current settings as named messages the moment they cha
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.munge.example.1.2.maxpat (keep it in the same folder as the abstraction and br.munge.abs.poly.1.1.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.munge.example.1.3.maxpat (keep it in the same folder as the abstraction and br.munge.abs.poly.1.3.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
 - **Voices:** br.munge starts with 0 voices (silent): click a Voices message (3, 6 or 10) to hear grains.
