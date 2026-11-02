@@ -1,5 +1,5 @@
-# Max/MSP Abstraction:   
-## br.munge.1.5
+# Max/MSP Abstractions:   
+## br.munge.2.0
 
 
 
@@ -8,13 +8,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.5, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.2.0, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 2.0](#whats-new-in-20)  
 [What's New in 1.5](#whats-new-in-15)  
 [What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
@@ -28,6 +29,17 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 [Example Patch](#Example) 
  
  
+
+## What's New in 2.0
+
+- **Two files, same sound.** br.munge is now split in two, like br.scrub:
+  - **br.munge.2.0** is the plain object: the whole granulator with no panel. Every control inlet takes a number **or a signal**, so an LFO, an envelope or a follower can drive Delay, Size, Speed, Separation, Spread, Dry/Wet, Feedback, Freeze or any other control.
+  - **br.munge.ui.2.0** is the familiar panel and State outlet around it. It replaces br.munge.abs.1.5: same 20 inlets and 3 outlets in the same order, so it swaps in without rewiring (retype the bpatcher file as br.munge.ui.2.0).
+- **Safe to modulate.** Values are kept inside each control's range and the menus round to the nearest mode, whatever arrives. Dry/Wet, Feedback, Spread and On/Off glide inside the object, so even a square wave cannot click. Delay, Size, Speed and Separation are read once when each grain starts, so modulation changes the next grain.
+- **Settings sent at load are never lost.** A value sent the moment a patch opens (a loadmess, a preset) used to be dropped if it arrived before the sound engine was ready. Every inlet now holds its value until the engine reads it, and unconnected inlets start at their defaults.
+- **One grain voice file:** br.munge.poly.2.0 (was br.munge.abs.poly.1.5), used by both files and by the Max for Live device.
+- **New example patch** laid out like before, with the source menu (drum loop, voice, drone, mic), a **plain object** tab (the same messages into br.munge.2.0) and the State outlet tab.
+- **One version number.** Every file in this repository is now 2.0.
 
 ## What's New in 1.5
 
@@ -117,25 +129,27 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.munge.abs.1.5.maxpat inside of the same folder as the Max patch you are using. To try it first, copy _br.munge.example.1.5.maxpat too. 
+2. Copy br.munge.2.0.maxpat, br.munge.ui.2.0.maxpat and br.munge.poly.2.0.maxpat into the same folder as the Max patch you are using. **br.munge will not work without br.munge.poly.2.0.maxpat** (the grain voice), and the .ui file uses br.munge.2.0. To try it first, copy _br.munge.example.2.0.maxpat too.  
 
-3. Also, copy and paste the file called br.munge.abs.poly.1.5.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
+3. For the version with the panel, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select br.munge.ui.2.0.maxpat. Size the bpatcher to 517 x 169 to show all of the controls.  
 
-4. In the Max patch you are using, create an object called br.munge.abs.1.5 (for example: [br.munge.abs.1.5], do not include brackets). **No buffer name argument is needed** -- every instance creates its own internal buffer, so you can use as many as you like side by side. (In version 1.0 an argument was required to name the buffer; if you still type one, it is simply ignored.)
+4. For the plain object, create an object called br.munge.2.0 (for example: [br.munge.2.0], do not include brackets) and control it through its inlets (see below).  
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.munge.abs.1.5.maxpat located within the same folder as your project. No argument is needed.
+**No buffer name argument is needed** -- every instance creates its own internal buffer, so you can use as many as you like side by side.
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; the third (last) outlet is the [State outlet](#State).
+Both files have the same 20 inlets in the same order. The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; br.munge.ui.2.0 adds a third (last) outlet, the [State outlet](#State).
 
-Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
+**br.munge.ui.2.0:** every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
+
+**br.munge.2.0:** every control inlet (3 to 20) takes a number or a signal. A number is held until you send another one; a signal is followed as it moves. Inlets you never use start at the defaults below. Values outside a range are kept inside it, and the menu inlets round to the nearest mode, so a smooth LFO steps through the modes.
 
 | Inlet | Control | Type | Range | Default |
 |---|---|---|---|---|
 | 1 | Left audio in | Signal | | |
 | 2 | Right audio in | Signal | | |
-| 3 | Voices | Int | 0 - 10 | 0 |
+| 3 | Voices | Int | 0 - 10 (changes reach the voices within 20 ms) | 0 |
 | 4 | Dry/Wet | Float | 0 - 100 % | 50 |
 | 5 | Delay 1 | Float | 0 - 1000 ms | 0 |
 | 6 | Delay 2 | Float | 0 - 1000 ms | 1000 |
@@ -156,7 +170,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 
 ## <a name="State"></a>State outlet
 
-The last outlet sends the current settings as named messages the moment they change, for example `voices 6`, `drywet 70.`, `mode 1`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync, and pick the messages out by name with [route voices drywet ...].
+br.munge.ui.2.0 only. The last outlet sends the current settings as named messages the moment they change, for example `voices 6`, `drywet 70.`, `mode 1`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync, and pick the messages out by name with [route voices drywet ...].
 
 | Name | Control | Values |
 |---|---|---|
@@ -181,12 +195,13 @@ The last outlet sends the current settings as named messages the moment they cha
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.munge.example.1.5.maxpat (keep it in the same folder as the abstraction and br.munge.abs.poly.1.5.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.munge.example.2.0.maxpat (keep it in the same folder as the three br.munge files). Pick a source in the menu (it starts Off), turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
-- **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
+- **Source:** drum loop, voice (Anton), drone or your mic / line in.
 - **Voices:** br.munge starts with 0 voices (silent): click a Voices message (3, 6 or 10) to hear grains.
 - **Messages:** every control has a row of messages (or a toggle) wired to its inlet; the panel follows.
 - **On/Off and Mix Mode:** send 0 to On/Off with Feedback up and hear the grains play out; then compare Thru (the dry keeps playing) with Aux (only the grains).
+- **plain object tab:** the same page with br.munge.2.0, the object without a panel, driven by the same messages.
 - **State outlet tab:** the numbers follow every setting as you change it on the panel or with the messages.
 
 ## <a name="Credits"></a>Credits

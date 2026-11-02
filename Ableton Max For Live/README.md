@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.munge.1.5
+# Ableton Max for Live device: br.munge.2.0
 
 
 
@@ -7,13 +7,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.5, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.2.0, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 2.0](#whats-new-in-20)  
 [What's New in 1.5](#whats-new-in-15)  
 [What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
@@ -22,6 +23,13 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 2.0
+
+- **Same sound engine as the 2.0 abstraction.** Values are kept inside each control's range, and Dry/Wet, Feedback, Spread and On/Off glide inside the device, so automating them quickly cannot click. Delay, Size, Speed and Separation are read once when each grain starts.
+- **Voices starts at 10,** so the device is heard as soon as it is added (it started at 0).
+- **Live sets:** the device is a new file, so existing sets keep the 1.5 device until you swap the new one in. The panel and every parameter name are unchanged.
+- **One version number.** Every file in this repository is now 2.0.
 
 ## What's New in 1.5
 
@@ -61,7 +69,7 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 
 This is a patch//device built in Max/MSP that allows the user to apply real-time granulation of a stereo signal. It emulates the munger~ external object from Max/MSP with additional features.
   
-**Voices:** The total number of active granular voices at a time. The default is 0, and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
+**Voices:** The total number of active granular voices at a time. The default is 10, and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
  
 **Dry/Wet:** The amount of dry and wet signal between 0. and 100. The default is 50. 
 
@@ -110,7 +118,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
-Copy and paste br.munge.1.5.amxd into that folder
+Copy and paste br.munge.2.0.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 

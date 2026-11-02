@@ -1,6 +1,6 @@
 {
     "patcher": {
-"description" : "br.munge.abs.poly.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: an emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.",
+        "description": "br.munge.poly.2.0 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: an emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.",
         "fileversion": 1,
         "appversion": {
             "major": 9,
@@ -17,8 +17,22 @@
             883.0
         ],
         "boxes": [
-{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [27.0, 294.0, 520.0, 80.0], "text": "br.munge.abs.poly.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: an emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.", "linecount": 4}},
-
+            {
+                "box": {
+                    "id": "obj-signature",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [
+                        27.0,
+                        294.0,
+                        520.0,
+                        80.0
+                    ],
+                    "text": "br.munge.poly.2.0 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: an emulation of munger~ by Dan Trueman and R. Luke DuBois (PeRColate), with stereo, amplitude/stereo envelopes, ping-pong feedback and freeze added by Brian Riordan.",
+                    "linecount": 4
+                }
+            },
             {
                 "box": {
                     "id": "obj-13",
@@ -142,7 +156,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         1177.0,
@@ -160,7 +174,7 @@
                             "Stereo Spread"
                         ]
                     },
-                    "text": "in 12 @attr_comment direction \"Stereo Spread\""
+                    "text": "in~ 12 @attr_comment direction \"Stereo Spread\""
                 }
             },
             {
@@ -170,7 +184,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         1146.0,
@@ -188,7 +202,7 @@
                             "Pan Mode: 0 = Off, 1 = sine, 2 = Right, 3 = Right-Left, 4 = Left, 5 = Alt, 6 = rand-step, 7 = rand-ramp"
                         ]
                     },
-                    "text": "in 11 @attr_comment direction \"Pan Mode: 0 = Off, 1 = sine, 2 = Right, 3 = Right-Left, 4 = Left, 5 = Alt, 6 = rand-step, 7 = rand-ramp\""
+                    "text": "in~ 11 @attr_comment direction \"Pan Mode: 0 = Off, 1 = sine, 2 = Right, 3 = Right-Left, 4 = Left, 5 = Alt, 6 = rand-step, 7 = rand-ramp\""
                 }
             },
             {
@@ -255,7 +269,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         1113.0,
@@ -267,7 +281,7 @@
                         "attr_comment": "Amp Mode: 0 = off, 1 = sine, 2 = up, 3 = tri, 4 = down, 5 = rand-step, 6 = rand-ramp",
                         "c": "Amp Mode: 0 = off, 1 = sine, 2 = up, 3 = tri, 4 = down, 5 = rand-step, 6 = rand-ramp"
                     },
-                    "text": "in 10 @attr_comment \"Amp Mode: 0 = off, 1 = sine, 2 = up, 3 = tri, 4 = down, 5 = rand-step, 6 = rand-ramp\""
+                    "text": "in~ 10 @attr_comment \"Amp Mode: 0 = off, 1 = sine, 2 = up, 3 = tri, 4 = down, 5 = rand-step, 6 = rand-ramp\""
                 }
             },
             {
@@ -277,7 +291,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         1080.5,
@@ -289,7 +303,7 @@
                         "attr_comment": "direction 0 = normal, 1 = backwards, 2 = random",
                         "c": "direction 0 = normal, 1 = backwards, 2 = random"
                     },
-                    "text": "in 9 @attr_comment \"direction 0 = normal, 1 = backwards, 2 = random\""
+                    "text": "in~ 9 @attr_comment \"direction 0 = normal, 1 = backwards, 2 = random\""
                 }
             },
             {
@@ -299,7 +313,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         359.0,
@@ -311,7 +325,7 @@
                         "attr_comment": "Speed 2",
                         "c": "Speed 2"
                     },
-                    "text": "in 8 @attr_comment \"Speed 2\""
+                    "text": "in~ 8 @attr_comment \"Speed 2\""
                 }
             },
             {
@@ -321,7 +335,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         325.0,
@@ -333,7 +347,7 @@
                         "attr_comment": "Speed 1",
                         "c": "Speed 1"
                     },
-                    "text": "in 7 @attr_comment \"Speed 1\""
+                    "text": "in~ 7 @attr_comment \"Speed 1\""
                 }
             },
             {
@@ -343,7 +357,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         303.0,
@@ -355,7 +369,7 @@
                         "attr_comment": "Grain Size 2",
                         "c": "Grain Size 2"
                     },
-                    "text": "in 6 @attr_comment \"Grain Size 2\""
+                    "text": "in~ 6 @attr_comment \"Grain Size 2\""
                 }
             },
             {
@@ -365,7 +379,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         284.0,
@@ -377,7 +391,7 @@
                         "attr_comment": "Grain Size 1",
                         "c": "Grain Size 1"
                     },
-                    "text": "in 5 @attr_comment \"Grain Size 1\""
+                    "text": "in~ 5 @attr_comment \"Grain Size 1\""
                 }
             },
             {
@@ -387,7 +401,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         268.0,
@@ -399,7 +413,7 @@
                         "attr_comment": "Delay Time 2",
                         "c": "Delay Time 2"
                     },
-                    "text": "in 4 @attr_comment \"Delay Time 2\""
+                    "text": "in~ 4 @attr_comment \"Delay Time 2\""
                 }
             },
             {
@@ -409,7 +423,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         250.0,
@@ -421,7 +435,7 @@
                         "attr_comment": "Delay Time 1",
                         "c": "Delay Time 1"
                     },
-                    "text": "in 3 @attr_comment \"Delay Time 1\""
+                    "text": "in~ 3 @attr_comment \"Delay Time 1\""
                 }
             },
             {
@@ -6499,7 +6513,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         580.0,
@@ -6511,7 +6525,7 @@
                         "attr_comment": "Separation 1",
                         "c": "Separation 1"
                     },
-                    "text": "in 14 @attr_comment \"Separation 1\""
+                    "text": "in~ 14 @attr_comment \"Separation 1\""
                 }
             },
             {
@@ -6523,7 +6537,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         695.0,
@@ -6535,7 +6549,7 @@
                         "attr_comment": "Separation 2",
                         "c": "Separation 2"
                     },
-                    "text": "in 15 @attr_comment \"Separation 2\""
+                    "text": "in~ 15 @attr_comment \"Separation 2\""
                 }
             },
             {
@@ -6547,7 +6561,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [
-                        ""
+                        "signal"
                     ],
                     "patching_rect": [
                         591.0,
@@ -6559,7 +6573,25 @@
                         "attr_comment": "Freeze",
                         "c": "Freeze"
                     },
-                    "text": "in 16 @attr_comment Freeze"
+                    "text": "in~ 16 @attr_comment Freeze"
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "comment",
+                    "id": "obj-74",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "outlettype": [],
+                    "patching_rect": [
+                        27.0,
+                        1451.0,
+                        520,
+                        60
+                    ],
+                    "text": "2.0: every setting arrives on an in~ (signal) instead of in (message), so LFOs and envelopes reach player-2 directly. Only \"in 2\" (voice count -> mute) and \"in 13\" (buffer name) stay messages. player-2 still reads delay/size/speed/separation once at each grain start.",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
                 }
             }
         ],

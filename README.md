@@ -1,6 +1,6 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.munge.1.5
+## br.munge.2.0
 
 
 
@@ -9,13 +9,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.5, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.2.0, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Links
 
+[What's New in 2.0](#whats-new-in-20)  
 [What's New in 1.5](#whats-new-in-15)  
 [What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
@@ -27,6 +28,18 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 
 
 **Max for Live note:** if Live's audio engine is off (no audio output device chosen, an orange bar at the bottom of Live), the device opens with its controls at 0 or their lowest value. Turn audio on and they jump to their default values by themselves.
+
+## What's New in 2.0
+
+- **Two files, same sound.** br.munge is now split in two, like br.scrub:
+  - **br.munge.2.0** is the plain object: the whole granulator with no panel. Every control inlet takes a number **or a signal**, so an LFO, an envelope or a follower can drive Delay, Size, Speed, Separation, Spread, Dry/Wet, Feedback, Freeze or any other control.
+  - **br.munge.ui.2.0** is the familiar panel and State outlet around it. It replaces br.munge.abs.1.5: same 20 inlets and 3 outlets in the same order, so it swaps in without rewiring (retype the bpatcher file as br.munge.ui.2.0).
+- **Safe to modulate.** Values are kept inside each control's range and the menus round to the nearest mode, whatever arrives. Dry/Wet, Feedback, Spread and On/Off glide inside the object, so even a square wave cannot click. Delay, Size, Speed and Separation are read once when each grain starts, so modulation changes the next grain.
+- **Settings sent at load are never lost.** A value sent the moment a patch opens (a loadmess, a preset) used to be dropped if it arrived before the sound engine was ready. Every inlet now holds its value until the engine reads it, and unconnected inlets start at their defaults.
+- **One grain voice file:** br.munge.poly.2.0 (was br.munge.abs.poly.1.5), used by both files and by the Max for Live device.
+- **Max for Live:** the device now runs the same 2.0 sound engine, and Voices starts at 10 so it is heard as soon as it is added. Every other control and its name is unchanged.
+- **New example patch** laid out like before, with the source menu (drum loop, voice, drone, mic), a **plain object** tab (the same messages into br.munge.2.0) and the State outlet tab.
+- **One version number.** Every file in this repository is now 2.0.
 
 ## What's New in 1.5
 
@@ -69,7 +82,7 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 
 This is a patch//device built in Max/MSP that allows the user to apply real-time granulation of a stereo signal. It emulates the munger~ external object from Max/MSP with additional features.
   
-**Voices:** The total number of active granular voices at a time. The default is 0, and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
+**Voices:** The total number of active granular voices at a time. The default is 0 in Max (10 in the Max for Live device), and the maximum is 10. The more active voices, the higher the current use of CPU. When the number is reduced in real-time, any active voice completes its present grain before shutting off. However, returning the number to 0 immediately mutes all grains.
  
 **Dry/Wet:** The amount of dry and wet signal between 0. and 100. The default is 50. 
 
