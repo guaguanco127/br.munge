@@ -10,7 +10,7 @@
         },
         "classnamespace": "box",
         "rect": [ 139.0, 87.0, 1350.0, 884.0 ],
-        "description": "_br.munge.example.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "description": "_br.munge.example.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
         "showontab": 1,
         "boxes": [
             {
@@ -388,7 +388,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 887.0, 5.0, 468.0, 33.0 ],
-                    "text": "_br.munge.example.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/"
+                    "text": "_br.munge.example.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/"
                 }
             },
             {
@@ -415,7 +415,7 @@
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
-                    "name": "br.munge.abs.1.4.maxpat",
+                    "name": "br.munge.abs.1.5.maxpat",
                     "numinlets": 20,
                     "numoutlets": 3,
                     "offset": [ 0.0, 0.0 ],
@@ -434,7 +434,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 15.0, 490.0, 520.0, 20.0 ],
-                    "text": "br.munge.abs.1.4 (bpatcher). Voices starts at 0 (silent): raise it, or click a Voices message."
+                    "text": "br.munge.abs.1.5 (bpatcher). Voices starts at 0 (silent): raise it, or click a Voices message."
                 }
             },
             {
@@ -447,7 +447,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 560.0, 520.0, 300.0, 74.0 ],
-                    "text": "Keep these files together, next to your patch: br.munge.abs.1.4.maxpat and br.munge.abs.poly.1.4.maxpat (the grain voice, loaded by poly~). Mix Mode: Thru = dry passes while Off; Aux = silent while Off."
+                    "text": "Keep these files together, next to your patch: br.munge.abs.1.5.maxpat and br.munge.abs.poly.1.5.maxpat (the grain voice, loaded by poly~). Mix Mode: Thru = dry passes while Off; Aux = silent while Off."
                 }
             },
             {
