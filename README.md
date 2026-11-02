@@ -26,6 +26,8 @@ Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/M
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.munge/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP   
 
 
+**Max for Live note:** if Live's audio engine is off (no audio output device chosen, an orange bar at the bottom of Live), the device opens with its controls at 0 or their lowest value. Turn audio on and they jump to their default values by themselves.
+
 ## What's New in 1.5
 
 - **Fast grains never read past the record head.** A grain faster than 1x catches up on the record head while it plays. With a short Delay it could run past it and play audio from up to 8 seconds earlier (or silence). Such grains now start just far enough back to finish behind the head. Their size and speed are unchanged; grains at 1x or slower are not affected.
