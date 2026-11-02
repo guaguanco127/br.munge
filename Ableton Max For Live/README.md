@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.munge.1.3
+# Ableton Max for Live device: br.munge.1.4
 
 
 
@@ -7,19 +7,26 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.munge.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
+Repository for br.munge.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.munge](https://github.com/guaguanco127/br.munge)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.4
+
+- **Smoother release from Freeze.** When you release Freeze, the frozen sound now keeps playing until enough new audio has been recorded to cover your longest Delay time, then crossfades back. Before, releasing could bring back audio from up to 8 seconds earlier (or silence), which made the level drop suddenly.
+- **Freeze is safe to switch quickly.** Turning Freeze back on during a release keeps the same frozen sound instead of grabbing a new window, so a sensor or controller hovering around its threshold no longer causes jumps.
+- **One version number.** Every file in this repository is now 1.4.
 
 ## What's New in 1.3
 
@@ -82,7 +89,7 @@ This is a patch//device built in Max/MSP that allows the user to apply real-time
 
 **Feedback:** Feeds the wet signal back into the munge effect, ping-ponging between left and right. The range is between 0. and 0.99, with the default set to 0. It is scaled by the number of active voices, so it behaves the same at any voice count.
 
-**Freeze:** Stops recording and keeps the grains playing from the last moments of audio before freezing -- the window set by the longest Delay time at the moment you freeze (at least 100 ms). Grains keep their size, speed, direction, pan and amp settings, but every grain stays inside that window, so no older material or silent gaps come back. Freezing and releasing are crossfaded, and so is the point where the window loops. The default is off.
+**Freeze:** Stops recording and keeps the grains playing from the last moments of audio before freezing -- the window set by the longest Delay time at the moment you freeze (at least 100 ms). Grains keep their size, speed, direction, pan and amp settings, but every grain stays inside that window, so no older material or silent gaps come back. Freezing and releasing are crossfaded, and so is the point where the window loops. When you release, the frozen sound keeps playing until enough new audio has been recorded to cover the longest Delay time (up to about a second at long Delay times), then crossfades back to live. Turning Freeze back on during that time keeps the same frozen sound. The default is off.
 
 
 
@@ -97,7 +104,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
-Copy and paste br.munge.1.3.amxd into that folder
+Copy and paste br.munge.1.4.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
